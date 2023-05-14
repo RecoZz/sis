@@ -4,6 +4,11 @@ let client = createClient({
   url: process.env.REDIS_URL,
 });
 
+export async function getClient()
+{
+  return client;
+}
+
 export async function redisInit() {
   client.on('error', err => {
     console.log('[REDIS]', err);
